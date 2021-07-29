@@ -1,0 +1,64 @@
+{
+  "name": "marketing-reactjs-sample-app",
+  "version": "1.0.0",
+  "description": "This is an example marketing website using reactjs and Contentstack",
+  "private": true,
+  "license": "MIT",
+  "author": "Contentstack",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.3",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jquery": "^3.3.31",
+    "@uniformdev/optimize-tracker-browser": "^9.0.1",
+    "@uniformdev/optimize-tracker-contentstack": "^9.0.1",
+    "@uniformdev/optimize-tracker-react": "^9.0.1",
+    "axios": "^0.19.0",
+    "babel-loader": "^8.0.4",
+    "bootstrap": "^4.4.1",
+    "contentstack": "^3.13.3",
+    "eslint-config-airbnb": "^18.0.1",
+    "font-awesome": "^4.7.0",
+    "gh-pages": "^2.1.1",
+    "jquery": "^3.4.1",
+    "mdbootstrap": "^4.10.1",
+    "node-sass": "^4.13.0",
+    "normalize.css": "^8.0.1",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.12.0",
+    "react-html-parser": "^2.0.2",
+    "react-modal-video": "^1.2.3",
+    "react-responsive-modal": "^4.0.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.0",
+    "react-typed": "^1.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "generate:intents": "uniform optimize manifest download --output ./src/lib/intentManifest.json --apiKey $UNIFORM_API_KEY"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@uniformdev/cli": "^9.0.1"
+  }
+}
