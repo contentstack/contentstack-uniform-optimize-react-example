@@ -1,7 +1,7 @@
 {
-  "name": "marketing-reactjs-sample-app",
+  "name": "contentstack-uniform-integration-example-app",
   "version": "1.0.0",
-  "description": "This is an example marketing website using reactjs and Contentstack",
+  "description": "This is an example marketing website based on ReactJS to demonstrate Uniform & Contentstack integration.",
   "private": true,
   "license": "MIT",
   "author": "Contentstack",
@@ -19,7 +19,6 @@
     "contentstack": "^3.13.3",
     "eslint-config-airbnb": "^18.0.1",
     "font-awesome": "^4.7.0",
-    "gh-pages": "^2.1.1",
     "jquery": "^3.4.1",
     "mdbootstrap": "^4.10.1",
     "node-sass": "^4.13.0",

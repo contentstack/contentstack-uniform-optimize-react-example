@@ -4,178 +4,160 @@
  * Module dependencies.
  */
 
-import React, { Component } from 'react';
-import About from './About';
-import Product from './Product';
-import Features from './Features';
-import Home from './Home';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Modal from 'react-responsive-modal';
-import '../staticAssets/css/style.css';
-import BlogContent from './BlogContent';
-import Blog from './Blog';
 import Stack from './Helper';
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
+const Header = () => {
+  const [signUp, setSignUp] = useState(false);
+  const [login, setLogin] = useState(false);
+  const [header, setHeader] = useState('');
 
-    this.state = {
-      sign: false,
-      login: false,
-      nav: '',
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        let result = await Stack.getEntry('header');
+        setHeader(result[0][0]);
+      } catch (err) {
+        console.log(err);
+      }
     };
-  }
+    getData();
+  }, []);
 
-  async componentDidMount() {
-    try {
-      let result = await Stack.getEntry('header');
-      this.setState({
-        nav: result[0][0],
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  onOpenModal = () => {
-    this.setState({ sign: true });
+  const onOpenModalSignUp = () => {
+    setSignUp(true);
   };
 
-  onOpenModalLogin = () => {
-    this.setState({ login: true });
+  const onOpenModalLogin = () => {
+    setLogin(true);
   };
 
-  onCloseModal = () => {
-    this.setState({ sign: false });
+  const onCloseSignUp = () => {
+    setSignUp(false);
   };
 
-  onCloseModalclose = () => {
-    this.setState({ login: false });
+  const onCloseLogin = () => {
+    setLogin(false);
   };
 
-  render() {
-    const { login, sign } = this.state;
-    if (this.state.nav !== '') {
-      return (
-        <Router>
-          <>
-            <header
-              className="header header-animated opaque"
-              style={{
-                display: 'block',
-                paddingTop: '5px',
-                paddingBottom: '5px',
-              }}
-            >
-              <div className="container">
-                <nav className="navbar navbar-default" role="navigation">
-                  <div className="navbar-header">
-                    <a className="logo" href={this.state.nav.logo.link.href}>
-                      <img className="img-responsive logo" src={this.state.nav.logo.image.url} alt="" data-logo-alt={this.state.nav.logo.image.url} data-logo-default={this.state.nav.logo.color_image.url} />
-                    </a>
-                  </div>
-
-                  <div className="nav-toggle collapsed" data-toggle="collapse" data-target="#navbarMain" aria-expanded="false" style={{ top: '15px' }}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  {/* <!-- Collect the nav links, forms, and other content for toggling --> */}
-                  <div className="navbar-collapse collapse in" id="navbarMain" aria-expanded="true" style={{ top: '65px' }}>
-                    <ul className="nav navbar-nav navbar-right">
-                      <li>
-                        <button className="btn btn-primary-outline" id="signup" onClick={this.onOpenModal}>
-                          {this.state.nav.cta[0].title}
-                        </button>
-                      </li>
-                      <li>
-                        <button className="btn btn-primary-outline" id="login" onClick={this.onOpenModalLogin}>
-                          {this.state.nav.cta[1].title}
-                        </button>
-                      </li>
-                    </ul>
-                    <ul className="nav navbar-nav collapsed-color">
-                      <>
-                        {this.state.nav.navigation_section.navigation_bar.map((navLink, i) => {
-                          return (
-                            <li>
-                              {' '}
-                              <Link to={navLink.link} className="nav-link">
-                                {navLink.title}
-                              </Link>{' '}
-                            </li>
-                          );
-                        })}
-                      </>
-                    </ul>
-                  </div>
-
-                  {/* <!-- .navbar-collapse --> */}
-                </nav>
+  if (header !== '') {
+    return (
+      <>
+        <header
+          className="header header-animated opaque"
+          style={{
+            display: 'block',
+            paddingTop: '5px',
+            paddingBottom: '5px',
+          }}
+        >
+          <div className="container">
+            <nav className="navbar navbar-default" role="navigation">
+              <div className="navbar-header">
+                <a className="logo" href={header.logo.link.href}>
+                  <img className="img-responsive logo" src={header.logo.image.url} alt="" data-logo-alt={header.logo.image.url} data-logo-default={header.logo.color_image.url} />
+                </a>
               </div>
-            </header>
-            {/* Sign up model */}
 
-            <Modal open={sign} onClose={this.onCloseModal}>
-              <div className="modal-body">
-                <h2>
-                  Get Started Absolutely<span> Free!</span>
-                </h2>
-                <span className="subtitle">No credit card needed</span>
-                <form className="contact-form form-validate3" novalidate="novalidate">
-                  <div className="form-group">
-                    <input className="form-control" type="text" name="name" id="name" placeholder="First Name" required="" autocomplete="off" aria-required="true" />
-                  </div>
-                  <div className="form-group">
-                    <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true" />
-                  </div>
-                  <div className="form-group">
-                    <input type="password" name="pass" className="form-control" placeholder="Password" required="" autocomplete="off" aria-required="true" />
-                  </div>
-                  <input className="btn btn-md btn-primary btn-center" id="sign_up" type="button" value="Sign Up" />
-                </form>
+              <div className="nav-toggle collapsed" data-toggle="collapse" data-target="#navbarMain" aria-expanded="false" style={{ top: '15px' }}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
-            </Modal>
+              {/* <!-- Collect the nav links, forms, and other content for toggling --> */}
+              <div className="navbar-collapse collapse in" id="navbarMain" aria-expanded="true" style={{ top: '65px' }}>
+                <ul className="nav navbar-nav navbar-right">
+                  {header.cta.map((item, i) => {
+                    if (item.title === 'Sign Up') {
+                      return (
+                        <li>
+                          <button className="btn btn-primary-outline" id="signup" onClick={onOpenModalSignUp}>
+                            {item.title}
+                          </button>
+                        </li>
+                      );
+                    } else if (item.title === 'Login') {
+                      return (
+                        <li>
+                          <button className="btn btn-primary-outline" id="login" onClick={onOpenModalLogin}>
+                            {header.cta[1].title}
+                          </button>
+                        </li>
+                      );
+                    }
+                  })}
+                </ul>
+                <ul className="nav navbar-nav collapsed-color">
+                  <>
+                    {header.navigation_section.navigation_bar.map((navLink, i) => {
+                      return (
+                        <li>
+                          {' '}
+                          <Link to={navLink.link} className="nav-link">
+                            {navLink.title}
+                          </Link>{' '}
+                        </li>
+                      );
+                    })}
+                  </>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </header>
+        {/* Sign up model */}
 
-            {/* <!-- signUp End -->
+        <Modal open={signUp} onClose={onCloseSignUp}>
+          <div className="modal-body">
+            <h2>
+              Get Started Absolutely<span> Free!</span>
+            </h2>
+            <span className="subtitle">No credit card needed</span>
+            <form className="contact-form form-validate3" novalidate="novalidate">
+              <div className="form-group">
+                <input className="form-control" type="text" name="name" id="name" placeholder="First Name" required="" autocomplete="off" aria-required="true" />
+              </div>
+              <div className="form-group">
+                <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true" />
+              </div>
+              <div className="form-group">
+                <input type="password" name="pass" className="form-control" placeholder="Password" required="" autocomplete="off" aria-required="true" />
+              </div>
+              <input className="btn btn-md btn-primary btn-center" id="sign_up" type="button" value="Sign Up" />
+            </form>
+          </div>
+        </Modal>
+
+        {/* <!-- signUp End -->
                   <!-- login --> */}
 
-            <Modal open={login} onClose={this.onCloseModalclose}>
-              <div className="modal-body">
-                <h2>
-                  Login and Get <span>Started</span>
-                </h2>
-                <span className="subtitle">Just fill in the form below</span>
-                <form className="contact-form form-validate4" novalidate="novalidate">
-                  <div className="form-group">
-                    <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true" />
-                  </div>
-                  <div className="form-group">
-                    <input type="password" name="pass" className="form-control" placeholder="Password" required="" autocomplete="off" aria-required="true" />
-                  </div>
-                  <input className="btn btn-md btn-primary btn-center" id="login_btn" type="button" value="Login" />
-                </form>
+        <Modal open={login} onClose={onCloseLogin}>
+          <div className="modal-body">
+            <h2>
+              Login and Get <span>Started</span>
+            </h2>
+            <span className="subtitle">Just fill in the form below</span>
+            <form className="contact-form form-validate4" novalidate="novalidate">
+              <div className="form-group">
+                <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true" />
               </div>
-            </Modal>
-          </>
-          <Switch>
-            <Route exact path={this.state.nav.navigation_section.navigation_bar[0].link} component={Home} />
-            <Route exact path={this.state.nav.navigation_section.navigation_bar[1].link} component={Features} />
-            <Route exact path={this.state.nav.navigation_section.navigation_bar[2].link} component={About} />
-            <Route exact path={this.state.nav.navigation_section.navigation_bar[3].link} component={Product} />
-            <Route exact path={this.state.nav.navigation_section.navigation_bar[4].link} component={Blog} />
-            <Route exact path={'/blog/:blogname'} component={BlogContent} />
-          </Switch>
-        </Router>
-      );
-    } else if (this.state.nav === '') {
-      return null;
-    }
+              <div className="form-group">
+                <input type="password" name="pass" className="form-control" placeholder="Password" required="" autocomplete="off" aria-required="true" />
+              </div>
+              <input className="btn btn-md btn-primary btn-center" id="login_btn" type="button" value="Login" />
+            </form>
+          </div>
+        </Modal>
+      </>
+    );
+  } else if (header === '') {
+    return null;
   }
-}
+};
 
 export default Header;
