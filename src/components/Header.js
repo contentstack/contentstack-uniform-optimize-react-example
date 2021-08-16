@@ -46,11 +46,9 @@ const Header = () => {
     return (
       <>
         <header
-          className="header header-animated opaque"
+          className="header header-animated"
           style={{
             display: 'block',
-            paddingTop: '5px',
-            paddingBottom: '5px',
           }}
         >
           <div className="container">

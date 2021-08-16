@@ -70,7 +70,7 @@ const Product = () => {
                 {product.banner.map((item, index) => {
                   return (
                     <>
-                      <div>{ReactHtmlParser(item.description)}</div>
+                      <p>{ReactHtmlParser(item.description)}</p>
                       <a href="/" className="btn btn-primary mrm">
                         {item.cta.link}
                       </a>
