@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import HeroBanner from '../components/HeroBanner';
 import $ from 'jquery';
-import Stack from '../components/Helper';
+import Stack from '../plugin/Helper';
 
 import { contentstackOptimizeListReader } from '@uniformdev/optimize-tracker-contentstack';
 import { Personalize } from '@uniformdev/optimize-tracker-react';
@@ -66,7 +66,7 @@ const Home = () => {
             <Personalize name="Personalized Hero" variations={variations} component={HeroBanner} />
             <div className="main-container"></div>
           </div>
-          <div className="modal videoModal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div className="modal videoModal fade" id="videoModal" tabIndex="-1" role="dialog" aria-hidden="true">
             <div className="modal-dialog modal-lg">
               <div className="modal-header">
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">

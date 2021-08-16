@@ -6,7 +6,7 @@
 
 import React, { useState, useEffect } from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import Stack from './Helper';
+import Stack from '../plugin/Helper';
 
 const Footer = () => {
   const [footer, setFooter] = useState('');
@@ -31,7 +31,7 @@ const Footer = () => {
             <div className="row">
               {footer.footer_section.footer_menu.map((menu, index) => {
                 return (
-                  <div className="col-sm-6 col-md-4">
+                  <div className="col-sm-6 col-md-4" key={index}>
                     <h5>{menu.title}</h5>
                     {ReactHtmlParser(menu.footer_content)}
                   </div>

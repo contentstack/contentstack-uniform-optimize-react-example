@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
-import Stack from '../components/Helper';
+import Stack from '../plugin/Helper';
 
 const About = () => {
   const [about, setAbout] = useState('');
@@ -46,42 +46,42 @@ const About = () => {
     document.title = about.title;
     return (
       <>
-        <div class="main-container">
-          <section class="team-wrap">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4 margin-top-50 margin-bottom">
+        <div className="main-container">
+          <section className="team-wrap">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-4 margin-top-50 margin-bottom">
                   {about.team_section.content ? ReactHtmlParser(about.team_section.content) : ''}
-                  <a href="#" class="btn btn-primary mrl">
-                    {about.team_section.cta[0].title}
+                  <a href="#" className="btn btn-primary mrl">
+                    {about.team_section.cta ? about.team_section.cta[0].title : ''}
                   </a>
-                  <a href="#" class="btn btn-secondary">
-                    {about.team_section.cta[1].title}
+                  <a href="#" className="btn btn-secondary">
+                    {about.team_section.cta ? about.team_section.cta[1].title : ''}
                   </a>
                 </div>
-                <div class="col-md-8">
-                  <img class="img-responsive" src={about.team_section.image.url} alt="section image" />
+                <div className="col-md-8">
+                  <img className="img-responsive" src={about.team_section.image.url} alt="section image" />
                 </div>
               </div>
             </div>
           </section>
-          <section class="promotion-wrap margin-top-max margin-bottom-max">
-            <div class="container">
-              <div class="text-center">{about.promote.description ? ReactHtmlParser(about.promote.description) : ''}</div>
-              <div class="img-wrap">
-                <img class="img-responsive" src={about.promote.image.url} alt="" />
+          <section className="promotion-wrap margin-top-max margin-bottom-max">
+            <div className="container">
+              <div className="text-center">{about.promote.description ? ReactHtmlParser(about.promote.description) : ''}</div>
+              <div className="img-wrap">
+                <img className="img-responsive" src={about.promote.image.url} alt="" />
               </div>
-              <div class="row">
-                <div class="col-md-offset-2 col-md-8 text-justify">
+              <div className="row">
+                <div className="col-md-offset-2 col-md-8 text-justify">
                   {about.promote.sub_content ? ReactHtmlParser(about.promote.sub_content) : ''}
-                  <div class="row">
+                  <div className="row">
                     {about.promote.store_section.map((item, index) => {
                       return (
-                        <div class="col-sm-4 ">
+                        <div className="col-sm-4" key={index}>
                           <a href="#" className="icons-links">
-                            <div class="icons-img-cont">
-                              <img class="img-responsive" src={item.color_image.url} alt="color image" />
-                              <img class="img-responsive" src={item.image.url} alt="image" />
+                            <div className="icons-img-cont">
+                              <img className="img-responsive" src={item.color_image.url} alt="color app" />
+                              <img className="img-responsive" src={item.image.url} alt="app item" />
                             </div>
                             <h4>{item.title}</h4>
                           </a>
@@ -96,18 +96,19 @@ const About = () => {
           {about.testimonials.map((item, index) => {
             return (
               <div
-                class="blockquote-wrap"
+                className="blockquote-wrap"
                 style={{
-                  'background-image': `url(${item.background_image.url})`,
+                  backgroundImage: `url(${item.background_image.url})`,
                 }}
+                key={index}
               >
-                <div class="background-overlay"></div>
-                <div class="container">
+                <div className="background-overlay"></div>
+                <div className="container">
                   <blockquote>
                     <p></p>
-                    <p>{item.description ? ReactHtmlParser(item.description) : ''}</p>
+                    {item.description ? ReactHtmlParser(item.description) : ''}
                     <p></p>
-                    <p class="speaker">{item.name}</p>
+                    <p className="speaker">{item.name}</p>
                   </blockquote>
                 </div>
               </div>

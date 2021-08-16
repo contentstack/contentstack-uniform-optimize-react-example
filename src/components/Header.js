@@ -7,7 +7,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-responsive-modal';
-import Stack from './Helper';
+import Stack from '../plugin/Helper';
 
 const Header = () => {
   const [signUp, setSignUp] = useState(false);
@@ -75,7 +75,7 @@ const Header = () => {
                   {header.cta.map((item, i) => {
                     if (item.title === 'Sign Up') {
                       return (
-                        <li>
+                        <li key={i}>
                           <button className="btn btn-primary-outline" id="signup" onClick={onOpenModalSignUp}>
                             {item.title}
                           </button>
@@ -83,7 +83,7 @@ const Header = () => {
                       );
                     } else if (item.title === 'Login') {
                       return (
-                        <li>
+                        <li key={i}>
                           <button className="btn btn-primary-outline" id="login" onClick={onOpenModalLogin}>
                             {header.cta[1].title}
                           </button>
@@ -96,7 +96,7 @@ const Header = () => {
                   <>
                     {header.navigation_section.navigation_bar.map((navLink, i) => {
                       return (
-                        <li>
+                        <li key={i}>
                           {' '}
                           <Link to={navLink.link} className="nav-link">
                             {navLink.title}

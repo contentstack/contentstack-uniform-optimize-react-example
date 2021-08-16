@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import ReactHtmlParser from 'react-html-parser';
 import $ from 'jquery';
-import Stack from '../components/Helper';
+import Stack from '../plugin/Helper';
 
 const Product = () => {
   const [product, setProduct] = useState('');
@@ -62,7 +62,7 @@ const Product = () => {
           <div
             className="product-hero-bg hero-bg"
             style={{
-              'background-image': `url(${product.banner[0].banner_img.url ? product.banner[0].banner_img.url : ''}))`,
+              'backgroundImage': `url(${product.banner[0].banner_img.url ? product.banner[0].banner_img.url : ''}))`,
             }}
           >
             <div className="aligned-container typed-container text-center">
@@ -100,7 +100,7 @@ const Product = () => {
               </div>
               <div className="row border-bottom">
                 <div className="container feedback-wrap">
-                  <img className="img-responsive" src={product.right_sources.image.url ? product.right_sources.image.url : ''} alt="image url" />
+                  <img className="img-responsive" src={product.right_sources.image.url ? product.right_sources.image.url : ''} alt="right sources" />
                 </div>
               </div>
             </section>
@@ -123,7 +123,7 @@ const Product = () => {
                   </div>
 
                   <div className="col-md-6">
-                    <img className="img-responsive" src={product.real_data.image.url ? product.real_data.image.url : ''} alt="real data image" />
+                    <img className="img-responsive" src={product.real_data.image.url ? product.real_data.image.url : ''} alt="real data" />
                   </div>
                 </div>
               </div>
@@ -143,7 +143,7 @@ const Product = () => {
                 {product.process_communication.head_content ? ReactHtmlParser(product.process_communication.head_content) : ''}
                 <div className="row">
                   <div className="col-md-6">
-                    <img className="img-responsive" src={product.process_communication.image.url ? product.process_communication.image.url : ''} alt="" />
+                    <img className="img-responsive" src={product.process_communication.image.url ? product.process_communication.image.url : ''} alt="communication" />
                   </div>
                   <div className="col-md-6 text-left padding-left-max">
                     {product.process_communication.process_content.map((item, index) => {
@@ -172,7 +172,6 @@ const Product = () => {
                 </div>
                 <div className="row">
                   {product.products.plans.map((item, index) => {
-                    console.log('nice', item);
                     return (
                       <div className="col-md-4 col-sm-4">
                         <div className="prices price-1">

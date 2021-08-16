@@ -4,7 +4,7 @@ import ReactHtmlParser from 'react-html-parser';
 import 'react-modal-video/scss/modal-video.scss';
 import ModalVideo from 'react-modal-video';
 import $ from 'jquery';
-import Stack from '../components/Helper';
+import Stack from '../plugin/Helper';
 
 const Features = () => {
   const [features, setFeatures] = useState('');
@@ -64,7 +64,7 @@ const Features = () => {
                     <strong>{features.advantages.advantages[0].title ? features.advantages.advantages[0].title : ''}</strong>
                   </h4>
                   <p className="text-center"></p>
-                  <p>{features.advantages.advantages[0].description ? ReactHtmlParser(features.advantages.advantages[0].description) : ''}</p>
+                  {features.advantages.advantages[0].description ? ReactHtmlParser(features.advantages.advantages[0].description) : ''}
                   <p></p>
                 </div>
                 <div className="col-md-3 col-xs-6 icon-wrap">
@@ -73,7 +73,7 @@ const Features = () => {
                     <strong>{features.advantages.advantages[1].title ? features.advantages.advantages[1].title : ''}</strong>
                   </h4>
                   <p className="text-center"></p>
-                  <p>{features.advantages.advantages[1].description ? ReactHtmlParser(features.advantages.advantages[1].description) : ''}</p>
+                  {features.advantages.advantages[1].description ? ReactHtmlParser(features.advantages.advantages[1].description) : ''}
                   <p></p>
                 </div>
                 <div className="col-md-3 col-xs-6 icon-wrap">
@@ -82,7 +82,7 @@ const Features = () => {
                     <strong>{features.advantages.advantages[2].title ? features.advantages.advantages[2].title : ''}</strong>
                   </h4>
                   <p className="text-center"></p>
-                  <p>{features.advantages.advantages[2].description ? ReactHtmlParser(features.advantages.advantages[2].description) : ''}</p>
+                  {features.advantages.advantages[2].description ? ReactHtmlParser(features.advantages.advantages[2].description) : ''}
                   <p></p>
                 </div>
                 <div className="col-md-3 col-xs-6 icon-wrap">
@@ -91,7 +91,7 @@ const Features = () => {
                     <strong>{features.advantages.advantages[3].title ? features.advantages.advantages[3].title : ''}</strong>
                   </h4>
                   <p className="text-center"></p>
-                  <p>{features.advantages.advantages[3].description ? ReactHtmlParser(features.advantages.advantages[3].description) : ''}</p>
+                  {features.advantages.advantages[3].description ? ReactHtmlParser(features.advantages.advantages[3].description) : ''}
                   <p></p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const Features = () => {
                 {features.advantages.tab_section.map((tab, index) => {
                   if (tab.title === 'Prototype') {
                     return (
-                      <li className="active">
+                      <li className="active" key={index}>
                         <a href="#tab1" data-toggle="tab" aria-expanded="true">
                           {tab.title}
                         </a>
@@ -111,7 +111,7 @@ const Features = () => {
                     );
                   } else if (tab.title === 'UI Design') {
                     return (
-                      <li className="">
+                      <li className="" key={index}>
                         <a href="#tab2" data-toggle="tab" aria-expanded="false">
                           {tab.title}
                         </a>
@@ -119,7 +119,7 @@ const Features = () => {
                     );
                   } else if (tab.title !== 'Prototype' && tab.title !== 'UI Design') {
                     return (
-                      <li className="">
+                      <li className="" key={index}>
                         <a href="#tab3" data-toggle="tab" aria-expanded="false">
                           {tab.title}
                         </a>
@@ -180,7 +180,7 @@ const Features = () => {
           <div
             className="video-wrap"
             style={{
-              'background-image': `url(${features.video_section.image.url ? features.video_section.image.url : ''})`,
+              'backgroundImage': `url(${features.video_section.image.url ? features.video_section.image.url : ''})`,
             }}
           >
             <div className="background-overlay"></div>
