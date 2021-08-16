@@ -6,7 +6,7 @@ About this project: Create professional marketing-themed website using ReactJS f
 
 ![pic one](/repo-asset/image-1.png)
 
-![pic two](/repo-asset/image-1.png)
+![pic two](/repo-asset/image-2.png)
 
 ## Live Demo
 
