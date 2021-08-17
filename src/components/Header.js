@@ -1,9 +1,3 @@
-// Header Component
-
-/**
- * Module dependencies.
- */
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-responsive-modal';

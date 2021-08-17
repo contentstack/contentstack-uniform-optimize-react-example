@@ -1,9 +1,3 @@
-// Footer Component
-
-/**
- * Module dependencies.
- */
-
 import React, { useState, useEffect } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import Stack from '../plugin/Helper';
@@ -23,7 +17,6 @@ const Footer = () => {
     getData();
   }, []);
   if (footer !== '') {
-
     return (
       <footer className="footer">
         <div className="footer-content">

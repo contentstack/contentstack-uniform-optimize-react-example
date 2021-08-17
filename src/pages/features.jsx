@@ -180,7 +180,7 @@ const Features = () => {
           <div
             className="video-wrap"
             style={{
-              'backgroundImage': `url(${features.video_section.image.url ? features.video_section.image.url : ''})`,
+              backgroundImage: `url(${features.video_section.image.url ? features.video_section.image.url : ''})`,
             }}
           >
             <div className="background-overlay"></div>
