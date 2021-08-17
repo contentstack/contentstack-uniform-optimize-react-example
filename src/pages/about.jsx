@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import $ from 'jquery';
 import ReactHtmlParser from 'react-html-parser';
-import Stack from '../plugin/Helper';
+import Stack from '../plugin/contentstack';
 
 const About = () => {
   const [about, setAbout] = useState('');

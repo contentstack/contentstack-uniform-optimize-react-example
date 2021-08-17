@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import ReactHtmlParser from 'react-html-parser';
 import $ from 'jquery';
-import Stack from '../plugin/Helper';
+import Stack from '../plugin/contentstack';
 
 const Product = () => {
   const [product, setProduct] = useState('');

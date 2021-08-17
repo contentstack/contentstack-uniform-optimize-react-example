@@ -4,7 +4,7 @@ import ReactHtmlParser from 'react-html-parser';
 import 'react-modal-video/scss/modal-video.scss';
 import ModalVideo from 'react-modal-video';
 import $ from 'jquery';
-import Stack from '../plugin/Helper';
+import Stack from '../plugin/contentstack';
 
 const Features = () => {
   const [features, setFeatures] = useState('');

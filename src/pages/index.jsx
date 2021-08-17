@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import HeroBanner from '../components/HeroBanner';
 import $ from 'jquery';
-import Stack from '../plugin/Helper';
+import Stack from '../plugin/contentstack';
 
 import { contentstackOptimizeListReader } from '@uniformdev/optimize-tracker-contentstack';
 import { Personalize } from '@uniformdev/optimize-tracker-react';

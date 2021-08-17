@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import Stack from '../plugin/Helper';
+import Stack from '../plugin/contentstack';
 
 const Footer = () => {
   const [footer, setFooter] = useState('');

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-responsive-modal';
-import Stack from '../plugin/Helper';
+import Stack from '../plugin/contentstack';
 
 const Header = () => {
   const [signUp, setSignUp] = useState(false);
