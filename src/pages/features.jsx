@@ -23,7 +23,7 @@ const Features = () => {
     getData();
   }, []);
 
-  //   animations hooks
+  // animations hooks
   useEffect(() => {
     let $header = $('.header-animated');
     let $logoDefault = $header.find('.logo > img').data('logo-default'); // black logo
