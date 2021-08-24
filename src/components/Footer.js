@@ -16,31 +16,28 @@ const Footer = () => {
     };
     getData();
   }, []);
-  if (!footer)return null;
-   else {
-    return (
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="container">
-            <div className="row">
-              {footer.footer_section.footer_menu.map((menu, index) => {
-                return (
-                  <div className="col-sm-6 col-md-4" key={index}>
-                    <h5>{menu.title}</h5>
-                    {ReactHtmlParser(menu.footer_content)}
-                  </div>
-                );
-              })}
-            </div>
+  if (!footer) return null;
+  return (
+    <footer className='footer'>
+      <div className='footer-content'>
+        <div className='container'>
+          <div className='row'>
+            {footer.footer_section.footer_menu.map((menu, index) => {
+              return (
+                <div className='col-sm-6 col-md-4' key={index}>
+                  <h5>{menu.title}</h5>
+                  {ReactHtmlParser(menu.footer_content)}
+                </div>
+              );
+            })}
           </div>
         </div>
-        <div className="footer-copyright">
-          <span>{footer.copy_rights ? ReactHtmlParser(footer.copy_rights) : ''}</span>
-        </div>
-      </footer>
-    );
-  
-}
+      </div>
+      <div className='footer-copyright'>
+        <span>{footer.copy_rights ? ReactHtmlParser(footer.copy_rights) : ''}</span>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

@@ -30,117 +30,115 @@ const Header = () => {
   const onCloseLogin = () => setLogin(false);
 
   if (!header) return null;
-  else {
-    const { logo, cta, navigation_section } = header;
-    return (
-      <div>
-        <header
-          className="header header-animated"
-          style={{
-            display: 'block',
-          }}
-        >
-          <div className="container">
-            <nav className="navbar navbar-default" role="navigation">
-              <div className="navbar-header">
-                <a className="logo" href={logo.link.href}>
-                  <img className="img-responsive logo" src={logo.image.url} alt="" data-logo-alt={logo.image.url} data-logo-default={logo.color_image.url} />
-                </a>
-              </div>
+  const { logo, cta, navigation_section } = header;
+  return (
+    <div>
+      <header
+        className='header header-animated'
+        style={{
+          display: 'block',
+        }}
+      >
+        <div className='container'>
+          <nav className='navbar navbar-default' role='navigation'>
+            <div className='navbar-header'>
+              <a className='logo' href={logo.link.href}>
+                <img className='img-responsive logo' src={logo.image.url} alt='' data-logo-alt={logo.image.url} data-logo-default={logo.color_image.url} />
+              </a>
+            </div>
 
-              <div className="nav-toggle collapsed" data-toggle="collapse" data-target="#navbarMain" aria-expanded="false" style={{ top: '15px' }}>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              {/* <!-- Collect the nav links, forms, and other content for toggling --> */}
-              <div className="navbar-collapse collapse in" id="navbarMain" aria-expanded="true" style={{ top: '65px' }}>
-                <ul className="nav navbar-nav navbar-right">
-                  {cta.map((item, i) => {
-                    if (item.title === 'Sign Up') {
-                      return (
-                        <li key={i}>
-                          <button className="btn btn-primary-outline" id="signup" onClick={onOpenModalSignUp}>
-                            {item.title}
-                          </button>
-                        </li>
-                      );
-                    } else if (item.title === 'Login') {
-                      return (
-                        <li key={i}>
-                          <button className="btn btn-primary-outline" id="login" onClick={onOpenModalLogin}>
-                            {header.cta[1].title}
-                          </button>
-                        </li>
-                      );
-                    }
-                  })}
-                </ul>
-                <ul className="nav navbar-nav collapsed-color">
-                  {navigation_section.navigation_bar.map((navLink, i) => {
+            <div className='nav-toggle collapsed' data-toggle='collapse' data-target='#navbarMain' aria-expanded='false' style={{ top: '15px' }}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            {/* <!-- Collect the nav links, forms, and other content for toggling --> */}
+            <div className='navbar-collapse collapse in' id='navbarMain' aria-expanded='true' style={{ top: '65px' }}>
+              <ul className='nav navbar-nav navbar-right'>
+                {cta.map((item, i) => {
+                  if (item.title === 'Sign Up') {
                     return (
                       <li key={i}>
-                        {' '}
-                        <Link to={navLink.link} className="nav-link">
-                          {navLink.title}
-                        </Link>{' '}
+                        <button className='btn btn-primary-outline' id='signup' onClick={onOpenModalSignUp}>
+                          {item.title}
+                        </button>
                       </li>
                     );
-                  })}
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </header>
-        {/* Sign up model */}
+                  } else if (item.title === 'Login') {
+                    return (
+                      <li key={i}>
+                        <button className='btn btn-primary-outline' id='login' onClick={onOpenModalLogin}>
+                          {header.cta[1].title}
+                        </button>
+                      </li>
+                    );
+                  }
+                })}
+              </ul>
+              <ul className='nav navbar-nav collapsed-color'>
+                {navigation_section.navigation_bar.map((navLink, i) => {
+                  return (
+                    <li key={i}>
+                      {' '}
+                      <Link to={navLink.link} className='nav-link'>
+                        {navLink.title}
+                      </Link>{' '}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      {/* Sign up model */}
 
-        <Modal open={signUp} onClose={onCloseSignUp}>
-          <div className="modal-body">
-            <h2>
-              Get Started Absolutely<span> Free!</span>
-            </h2>
-            <span className="subtitle">No credit card needed</span>
-            <form className="contact-form form-validate3" noValidate="novalidate">
-              <div className="form-group">
-                <input className="form-control" type="text" name="name" id="name" placeholder="First Name" required="" autoComplete="off" aria-required="true" />
-              </div>
-              <div className="form-group">
-                <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autoComplete="off" aria-required="true" />
-              </div>
-              <div className="form-group">
-                <input type="password" name="pass" className="form-control" placeholder="Password" required="" autoComplete="off" aria-required="true" />
-              </div>
-              <input className="btn btn-md btn-primary btn-center" id="sign_up" type="button" value="Sign Up" />
-            </form>
-          </div>
-        </Modal>
+      <Modal open={signUp} onClose={onCloseSignUp}>
+        <div className='modal-body'>
+          <h2>
+            Get Started Absolutely<span> Free!</span>
+          </h2>
+          <span className='subtitle'>No credit card needed</span>
+          <form className='contact-form form-validate3' noValidate='novalidate'>
+            <div className='form-group'>
+              <input className='form-control' type='text' name='name' id='name' placeholder='First Name' required='' autoComplete='off' aria-required='true' />
+            </div>
+            <div className='form-group'>
+              <input className='form-control' type='email' name='email' placeholder='E-mail' required='' autoComplete='off' aria-required='true' />
+            </div>
+            <div className='form-group'>
+              <input type='password' name='pass' className='form-control' placeholder='Password' required='' autoComplete='off' aria-required='true' />
+            </div>
+            <input className='btn btn-md btn-primary btn-center' id='sign_up' type='button' value='Sign Up' />
+          </form>
+        </div>
+      </Modal>
 
-        {/* <!-- signUp End -->
+      {/* <!-- signUp End -->
                   <!-- login --> */}
 
-        <Modal open={login} onClose={onCloseLogin}>
-          <div className="modal-body">
-            <h2>
-              Login and Get <span>Started</span>
-            </h2>
-            <span className="subtitle">Just fill in the form below</span>
-            <form className="contact-form form-validate4" noValidate="novalidate">
-              <div className="form-group">
-                <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autoComplete="off" aria-required="true" />
-              </div>
-              <div className="form-group">
-                <input type="password" name="pass" className="form-control" placeholder="Password" required="" autoComplete="off" aria-required="true" />
-              </div>
-              <input className="btn btn-md btn-primary btn-center" id="login_btn" type="button" value="Login" />
-            </form>
-          </div>
-        </Modal>
-      </div>
-    );
-  }
+      <Modal open={login} onClose={onCloseLogin}>
+        <div className='modal-body'>
+          <h2>
+            Login and Get <span>Started</span>
+          </h2>
+          <span className='subtitle'>Just fill in the form below</span>
+          <form className='contact-form form-validate4' noValidate='novalidate'>
+            <div className='form-group'>
+              <input className='form-control' type='email' name='email' placeholder='E-mail' required='' autoComplete='off' aria-required='true' />
+            </div>
+            <div className='form-group'>
+              <input type='password' name='pass' className='form-control' placeholder='Password' required='' autoComplete='off' aria-required='true' />
+            </div>
+            <input className='btn btn-md btn-primary btn-center' id='login_btn' type='button' value='Login' />
+          </form>
+        </div>
+      </Modal>
+    </div>
+  );
 };
 
 export default Header;
