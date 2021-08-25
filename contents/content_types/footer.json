@@ -1,1 +1,105 @@
-{"title":"Footer","uid":"footer","schema":[{"display_name":"Title","uid":"title","data_type":"text","field_metadata":{"_default":true,"version":3},"unique":true,"mandatory":true,"multiple":false,"non_localizable":false},{"display_name":"Footer Section","uid":"footer_section","data_type":"group","field_metadata":{"ref_multiple":false,"rich_text_type":"standard","description":""},"mandatory":false,"multiple":false,"unique":false,"schema":[{"display_name":"Footer Menu","uid":"footer_menu","data_type":"group","field_metadata":{"ref_multiple":false,"rich_text_type":"standard","description":""},"mandatory":false,"multiple":true,"unique":false,"schema":[{"display_name":"Title","uid":"title","data_type":"text","field_metadata":{"_default":true,"version":3},"unique":false,"mandatory":false,"multiple":false,"non_localizable":false},{"display_name":"Footer Content","uid":"footer_content","data_type":"text","field_metadata":{"allow_rich_text":true,"ref_multiple":false,"rich_text_type":"standard","description":"","version":3},"unique":false,"mandatory":false,"multiple":false,"non_localizable":false}],"non_localizable":false}],"non_localizable":false},{"display_name":"Copy Rights","uid":"copy_rights","data_type":"text","field_metadata":{"allow_rich_text":true,"ref_multiple":false,"rich_text_type":"standard","description":"","version":3},"unique":false,"mandatory":false,"multiple":false,"non_localizable":false}],"description":"","options":{"_version":1,"is_page":false,"sub_title":[],"title":"title","description":"","singleton":true}}
+{
+    "title": "Footer",
+    "uid": "footer",
+    "schema": [
+        {
+            "display_name": "Title",
+            "uid": "title",
+            "data_type": "text",
+            "field_metadata": {
+                "_default": true,
+                "version": 3
+            },
+            "unique": true,
+            "mandatory": true,
+            "multiple": false,
+            "non_localizable": false
+        },
+        {
+            "display_name": "Footer Section",
+            "uid": "footer_section",
+            "data_type": "group",
+            "field_metadata": {
+                "ref_multiple": false,
+                "rich_text_type": "standard",
+                "description": ""
+            },
+            "mandatory": false,
+            "multiple": false,
+            "unique": false,
+            "schema": [
+                {
+                    "display_name": "Footer Menu",
+                    "uid": "footer_menu",
+                    "data_type": "group",
+                    "field_metadata": {
+                        "ref_multiple": false,
+                        "rich_text_type": "standard",
+                        "description": ""
+                    },
+                    "mandatory": false,
+                    "multiple": true,
+                    "unique": false,
+                    "schema": [
+                        {
+                            "display_name": "Title",
+                            "uid": "title",
+                            "data_type": "text",
+                            "field_metadata": {
+                                "_default": true,
+                                "version": 3
+                            },
+                            "unique": false,
+                            "mandatory": false,
+                            "multiple": false,
+                            "non_localizable": false
+                        },
+                        {
+                            "display_name": "Footer Content",
+                            "uid": "footer_content",
+                            "data_type": "text",
+                            "field_metadata": {
+                                "allow_rich_text": true,
+                                "ref_multiple": false,
+                                "rich_text_type": "standard",
+                                "description": "",
+                                "version": 3
+                            },
+                            "unique": false,
+                            "mandatory": false,
+                            "multiple": false,
+                            "non_localizable": false
+                        }
+                    ],
+                    "non_localizable": false
+                }
+            ],
+            "non_localizable": false
+        },
+        {
+            "display_name": "Copy Rights",
+            "uid": "copy_rights",
+            "data_type": "text",
+            "field_metadata": {
+                "allow_rich_text": true,
+                "ref_multiple": false,
+                "rich_text_type": "standard",
+                "description": "",
+                "version": 3
+            },
+            "unique": false,
+            "mandatory": false,
+            "multiple": false,
+            "non_localizable": false
+        }
+    ],
+    "description": "It contains footer section content",
+    "options": {
+        "_version": 1,
+        "is_page": false,
+        "sub_title": [],
+        "title": "title",
+        "description": "",
+        "singleton": true
+    }
+}
