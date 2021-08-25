@@ -1,0 +1,54 @@
+{
+  "site": {
+    "sampleSize": 0,
+    "intents": [
+      {
+        "id": "annualEventRegistration",
+        "signals": [
+          {
+            "type": "BEH",
+            "freq": "always",
+            "scope": "visitor",
+            "str": 50
+          },
+          {
+            "type": "QS",
+            "freq": "visit",
+            "scope": "visitor",
+            "str": 50,
+            "value": {
+              "cs": false,
+              "expr": "email",
+              "type": "exact"
+            },
+            "parameter": "annual_event"
+          }
+        ]
+      },
+      {
+        "id": "knowMore",
+        "signals": [
+          {
+            "type": "PVI",
+            "freq": "always",
+            "scope": "visitor",
+            "str": 50,
+            "path": {
+              "cs": false,
+              "expr": "/product",
+              "type": "exact"
+            }
+          },
+          {
+            "type": "BEH",
+            "freq": "always",
+            "scope": "visitor",
+            "str": 50
+          }
+        ]
+      }
+    ],
+    "enrichments": [],
+    "tests": []
+  }
+}
