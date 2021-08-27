@@ -1,5 +1,6 @@
 ![logo](/repo-asset/logo.png)
-# Create A Personalized Marketing-Themed Website Using ReactJS, Contentstack & Uniform  
+
+# Create A Personalized Marketing-Themed Website Using ReactJS, Contentstack & Uniform
 
 **About Contentstack**: Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 
@@ -18,7 +19,7 @@ For this project, we have created and deployed the sample application on Vercel.
 
 To learn how to create a personalized marketing website using Contentstack and Uniform, we have created an in-depth tutorial. By following the steps given in the tutorial, you'll be able to create a website similar to the one given in the demo.
 
-[Uniform & Contentstack Integration]()
+[Uniform & Contentstack Integration](https://www.contentstack.com/docs/developers/how-to-guides/personalize-your-contentstack-powered-website-using-uniform-optimize)
 
 ## Documentation
 
