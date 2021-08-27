@@ -1,5 +1,5 @@
 ![logo](/repo-asset/logo.png)
-# Create a marketing website using ReactJS framework
+# Create A Personalized Marketing-Themed Website Using ReactJS, Contentstack & Uniform  
 
 **About Contentstack**: Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 
@@ -12,6 +12,7 @@
 ## Live Demo
 
 For this project, we have created and deployed the sample application on Vercel. Check the [live demo](https://uniform-persnolize-cs.vercel.app/) to get first-hand experience of the website.
+
 
 ## Tutorial
 
